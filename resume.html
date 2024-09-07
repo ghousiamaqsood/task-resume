@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: "Century Gothic", sans-serif;
+            background-color: #e0f7fa; /* Light blue background */
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid #0097a7; /* Teal border */
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: #0097a7; /* Teal background */
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .header img {
+            border-radius: 50%;
+            margin-right: 20px;
+            border: 3px solid #ffffff; /* White border */
+        }
+
+        h1 {
+            font-size: 28pt;
+            color: #ffffff; /* White color */
+            margin: 0;
+        }
+
+        .section-header {
+            font-size: 22pt;
+            color: #004d40; /* Dark teal */
+            margin: 30px 0 15px;
+            border-bottom: 3px solid #004d40; /* Dark teal border */
+            padding-bottom: 5px;
+            background-color: #b2dfdb; /* Light teal background */
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            display: none; /* Hidden by default */
+        }
+
+        th {
+            background-color: #004d40; /* Dark teal */
+            color: white;
+            padding: 12px;
+            font-size: 18pt;
+            text-align: left;
+        }
+
+        td {
+            padding: 12px;
+            background-color: #f1f8e9; /* Light green */
+            vertical-align: middle;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 4px 0;
+            border-radius: 4px;
+            border: 1px solid #cfd8dc; /* Light grey border */
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .show {
+            display: table; /* Show the table */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="file:///C:/Users/ALPHA/Desktop/istockphoto-2001377434-612x612.webp" width="95" height="90" alt="Profile Picture">
+            <h1>Resume</h1>
+        </div>
+
+        <form>
+            <div class="section-header" onclick="toggleSection('personal-info')">Personal Information</div>
+            <table id="personal-info">
+                <tr>
+                    <td><b>Full Name:</b></td>
+                    <td><input type="text" name="full-name"></td>
+                </tr>
+                <tr>
+                    <td><b>Father's Name:</b></td>
+                    <td><input type="text" name="father-name"></td>
+                </tr>
+                <tr>
+                    <td><b>Date of Birth:</b></td>
+                    <td><input type="date" name="dob"></td>
+                </tr>
+                <tr>
+                    <td><b>NIC #:</b></td>
+                    <td><input type="text" name="nic"></td>
+                </tr>
+                <tr>
+                    <td><b>Age:</b></td>
+                    <td><input type="number" name="age" min="18" max="50"></td>
+                </tr>
+                <tr>
+                    <td><b>Gender:</b></td>
+                    <td>
+                        <input type="radio" name="gender" value="male"> Male
+                        <input type="radio" name="gender" value="female"> Female
+                        <input type="radio" name="gender" value="other"> Other
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Cell #:</b></td>
+                    <td><input type="text" name="cell"></td>
+                </tr>
+                <tr>
+                    <td><b>Home Address:</b></td>
+                    <td><textarea name="address" rows="3"></textarea></td>
+                </tr>
+                <tr>
+                    <td><b>Country:</b></td>
+                    <td>
+                        <select name="country">
+                            <option value="">Select Country</option>
+                            <option value="Afghanistan">Afghanistan</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="England">England</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Holland">Holland</option>
+                            <option value="Iceland">Iceland</option>
+                            <option value="Jakarta">Jakarta</option>
+                            <option value="California">California</option>
+                            <option value="Pakistan">Pakistan</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>City:</b></td>
+                    <td>
+                        <select name="city">
+                            <option value="">Select City</option>
+                            <option value="Qandhar">Qandhar</option>
+                            <option value="Dhaka">Dhaka</option>
+                            <option value="Hamilton">Hamilton</option>
+                            <option value="Islamabad">Islamabad</option>
+                            <option value="Santa Maria">Santa Maria</option>
+                            <option value="Jakarta">Jakarta</option>
+                            <option value="Buckit Tingi">Buckit Tingi</option>
+                            <option value="Karachi">Karachi</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="section-header" onclick="toggleSection('professional-skills')">Professional Skills</div>
+            <table id="professional-skills">
+                <tr>
+                    <td colspan="2">
+                        <textarea name="skills" rows="4" placeholder="List your professional skills here..."></textarea>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="section-header" onclick="toggleSection('working-experience')">Working Experience</div>
+            <table id="working-experience">
+                <tr>
+                    <td colspan="2">
+                        <textarea name="working-skills" rows="4" placeholder="List your working skills here..."></textarea>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="section-header" onclick="toggleSection('education')">Education</div>
+            <table id="education">
+                <tr>
+                    <td><b>Highest Degree:</b></td>
+                    <td>
+                        <input type="text" name="degree" placeholder="e.g., B.Com from Karachi University">
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Grade:</b></td>
+                    <td><input type="text" name="grade" placeholder="e.g., 'A' Grade"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script>
+        function toggleSection(sectionId) {
+            const table = document.getElementById(sectionId);
+            if (table.style.display === "none" || table.style.display === "") {
+                table.style.display = "table";
+            } else {
+                table.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
